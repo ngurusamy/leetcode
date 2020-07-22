@@ -12,14 +12,15 @@ public:
                 if(grid[i][j] == 0) 
                     continue;
                 
+                perimeter +=4;
                 if(i > 0) 
-                    perimeter += grid[i - 1][j];
+                    perimeter -= grid[i - 1][j];
                 if(j > 0)
-                    perimeter += grid[i][j - 1];
+                    perimeter -= grid[i][j - 1];
                 if(i < row - 1)
-                    perimeter += grid[i + 1][j];
+                    perimeter -= grid[i + 1][j];
                 if(j < col - 1)
-                    perimeter += grid[i][j + 1];
+                    perimeter -= grid[i][j + 1];
             }
         }
         return perimeter;
