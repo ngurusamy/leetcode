@@ -21,4 +21,32 @@ public:
         
         return s;
     }
+    
+    string reverseWords_2(string s) { 
+        string result;
+        
+        size_t len = s.length();
+        
+        size_t i = 0, j = 0, n = 0;
+        
+        while (i < (len)) {
+            while(i < (len) && s[i] == ' ') i++;
+            if(i >= len) break;
+            j = i + 1;
+        
+            cout << " J : " << j << "\n";
+            while( j < (len) && s[j] != ' ') j++;
+        
+            string w = "";
+            w = s.substr(i, j - i);
+            if(result.length() == 0)
+                result = w;
+            else
+                result = w + " " + result; //+ " " + result;
+            
+            i = j + 1;
+        }
+        
+        return result;        
+    }
 };
