@@ -34,15 +34,12 @@ public:
             if(i >= len) break;
             j = i + 1;
         
-            cout << " J : " << j << "\n";
             while( j < (len) && s[j] != ' ') j++;
         
-            string w = "";
-            w = s.substr(i, j - i);
             if(result.length() == 0)
-                result = w;
+                result = s.substr(i, j - i);
             else
-                result = w + " " + result; //+ " " + result;
+                result = s.substr(i, j - i) + " " + result;
             
             i = j + 1;
         }
