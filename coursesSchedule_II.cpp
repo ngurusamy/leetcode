@@ -1,18 +1,18 @@
 class Solution {
     bool findOrderUtil(int v, vector<int> & visited, stack<int> & Stack, vector<vector<int>>& adjList) {
         
-        //if(visited[v] == 1)
-          //  return false;
-        
         visited[v] = 1;
         
         vector<int> :: iterator itr;
         for(itr = adjList[v].begin(); itr != adjList[v].end(); itr++) {
             if(visited[*itr] == 1) return false;
-            if(visited[*itr] == 0) {
+            /*if(visited[*itr] == 0) {
                 if(!findOrderUtil(*itr, visited, Stack, adjList)) 
                     return false;
-            }
+            }*/
+            
+            if(visited[*itr] == 0 && !findOrderUtil(*itr, visited, Stack, adjList))
+                return false;
         }
         
         visited[v] = 2;
