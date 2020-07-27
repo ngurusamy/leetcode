@@ -2,6 +2,7 @@ class Solution {
 public:
     string addBinary(string a, string b) {
         string result = "";
+        int carry = 0;
 
         int i = a.length() - 1, j = b.length() - 1;
         
