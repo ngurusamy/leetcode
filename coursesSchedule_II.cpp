@@ -61,4 +61,7 @@ Output: [0,1,2,3] or [0,2,1,3]
 Explanation: There are a total of 4 courses to take. To take course 3 you should have finished both     
              courses 1 and 2. Both courses 1 and 2 should be taken after you finished course 0. 
              So one correct course order is [0,1,2,3]. Another correct ordering is [0,2,1,3] .
+
+Hint : Find is there any cycle in graph, if it is there then courses cannot be completed. here 0-> unvisited, 1->visited and process of exploring neighbour, 2->completed the explore.
+       if there is any of neighbours of one node found to be visited then there is a cycle.
 */
